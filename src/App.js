@@ -101,7 +101,7 @@ function App() {
 
   return (
     <div className='App'>
-      <section className='h-[400px] md:min-h-[652px] bg-[#641F27]'>
+      <section className='h-[400px] md:min-h-[652px] bg-[#641F27] relative overflow-hidden'>
         <div className='absolute 2xl:-top-32'>
           <Lottie animationData={cubes} className='mx-auto w-full scale-150' />
         </div>
