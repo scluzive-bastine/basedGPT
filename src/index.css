@@ -1,13 +1,97 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* @import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Macondo&family=Sulphur+Point:wght@400;700&display=swap');
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  body {
+    @apply bg-[#121212]
+  }
+
+  .roadmap:nth-child(1) {
+    background-color: white;
+    color: black;
+  }
+  .roadmap:nth-child(1) .description {
+      @apply text-gray-800
+  }
+  .roadmap:nth-child(1) .phase {
+    @apply text-gray-400
+  }
+  .roadmap:nth-child(2) {
+    @apply text-white bg-[#641F27]
+  }
+  .roadmap:nth-child(2) .phase {
+    @apply text-gray-200
+  }
+
+  .roadmap:nth-child(2) .description {
+    @apply text-gray-200
+  }
+
+  .roadmap:nth-child(3) {
+    @apply text-white bg-black
+  }
+  .roadmap:nth-child(3) .phase {
+    @apply text-gray-200
+  }
+
+  .roadmap:nth-child(3) .description {
+    @apply text-gray-200
+  }
+
+  .roadmap:nth-child(4) {
+    @apply text-white bg-[#2c0e11]
+  }
+
+  .roadmap:nth-child(4) .phase {
+    @apply text-gray-200
+  }
+
+  .roadmap:nth-child(4) .description {
+    @apply text-gray-200
+  }
+
+  .roadmap:nth-child(1) span .dot {
+    @apply bg-red-1000
+  }
+  .roadmap:nth-child(2) span .dot, .roadmap:nth-child(3) span .dot, .roadmap:nth-child(4) span .dot {
+    @apply bg-white
+  }
+    
+  .ease-transition {
+    -webkit-transition-duration: .6s;
+      -moz-transition-duration: .6s;
+      -o-transition-duration: .6s;
+      transition-duration: .6s;
+  }
+
+  .show {
+    -webkit-transition-duration: .6s;
+    -moz-transition-duration: .6s;
+    -o-transition-duration: .6s;
+    transition-duration: .6s;
+    -webkit-transition-property: font-size opacity;
+    -o-transition-property: font-size opacity;
+    -moz-transition-property: font-size opacity;
+    transition-property: font-size opacity;
+  }
+    .spin {
+      animation: spin 10s linear infinite;
+    }
+
+    .spin-two {
+      animation: spin 25s linear infinite;
+    }
+
+    @keyframes spin {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
 }
