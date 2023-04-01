@@ -103,7 +103,7 @@ function App() {
     <div className='App'>
       <section className='h-[400px] md:min-h-[652px] bg-[#641F27] relative overflow-hidden'>
         <div className='absolute 2xl:-top-32'>
-          <Lottie animationData={cubes} className='mx-auto w-full scale-150' />
+          <Lottie animationData={cubes} className='mx-auto w-full h-full scale-150' />
         </div>
         <header className='px-4 lg:px-20 py-4 relative z-10'>
           <nav className='flex justify-between items-center'>
