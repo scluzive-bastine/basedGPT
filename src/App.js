@@ -10,6 +10,7 @@ import TextToVideo from './assets/video.json'
 import line from './assets/line.png'
 import circle from './assets/circle.png'
 import cubes from './assets/spin.json'
+import stats from './assets/u.json'
 
 import { useState } from 'react'
 
@@ -234,7 +235,7 @@ function App() {
           </div>
         </div>
       </section>
-      <section className='py-20 lg:py-40 px-4 lg:px-20'>
+      <section className='py-20 lg:py-40 px-4 lg:px-32'>
         <div className='relative'>
           <h2 className='text-5xl lg:text-8xl text-white font-bold mb-10 font-sulphur uppercase tracking-wide z-10'>
             BasedGPT Powerful <br /> <span className='text-red-1000'>Benefits</span>
@@ -341,7 +342,7 @@ function App() {
         </div>
       </section>
       <section className='py-12 lg:py-40 bg-white 2xl:px-4'>
-        <div className='px-4 lg:px-20'>
+        <div className='px-4 lg:px-32'>
           <small
             className='uppercase text-gray-500 text-sm
         '
@@ -389,7 +390,7 @@ function App() {
           </div>
         </div>
 
-        <div className='mt-40 px-4 lg:px-20 max-w-screen-2xl'>
+        <div className='mt-40 px-4 lg:px-16 2xl:px-32 max-w-screen-3xl'>
           <h2 className='text-xl font-semibold text-gray-700'>Based GPT TECHNOLOGY</h2>
           <div className='text-2xl lg:text-4xl 2xl:text-6xl font-sulphur font-semibold mt-10'>
             Artificial Intelligence (AI) has a significant impact on our world, with deep and
@@ -398,11 +399,11 @@ function App() {
           </div>
         </div>
 
-        <div className='px-4 lg:px-20'>
+        <div className='px-4 2xl:px-20'>
           <div className='pt-40 grid grid-cols-12 gap-8'>
             <div className='col-span-12 lg:col-span-5'>
-              <div className='flex flex-col justify-between rounded-2xl h-[400px] lg:h-[800px] bg-gray-400 p-5 lg:p-10 2xl:p-20'>
-                <div className='text-xl lg:text-6xl font-sulphur font-extrabold'>
+              <div className='flex flex-col justify-between rounded-2xl h-[400px] lg:h-[800px] bg-black p-5 lg:p-10 2xl:p-20'>
+                <div className='text-xl lg:text-6xl font-sulphur font-extrabold text-white'>
                   <span className='text-red-1000'>STATISTICS</span> OF BasedGPT IN BUSINESS
                 </div>
                 <img src={img1} alt='image' />
@@ -413,7 +414,9 @@ function App() {
                 <div className='text-xl lg:text-6xl font-sulphur font-extrabold text-white'>
                   891,456,783
                 </div>
-                <div className='text-xl lg:text-6xl font-macondo font-extrabold text-white'>
+                <Lottie animationData={stats} className='mx-auto w-full h-full' />
+
+                <div className='text-xl lg:text-4xl 2xl:text-6xl font-sulphur font-extrabold text-white'>
                   Generated Revenue by <span className='text-red-1000'>BasedGPT</span> Solutions
                 </div>
               </div>
@@ -422,7 +425,7 @@ function App() {
                   <div className='text-xl lg:text-6xl font-sulphur font-extrabold text-white'>
                     90,178
                   </div>
-                  <div className='text-xl lg:text-4xl font-macondo font-extrabold text-white'>
+                  <div className='text-xl lg:text-4xl font-sulphur font-extrabold text-white'>
                     Total Points Consumed with BasedGPT
                   </div>
                 </div>
@@ -430,11 +433,91 @@ function App() {
                   <div className='text-xl lg:text-6xl font-sulphur font-extrabold text-black'>
                     90,178
                   </div>
-                  <div className='text-xl lg:text-4xl font-macondo font-extrabold'>
+                  <div className='text-xl lg:text-4xl font-sulphur font-extrabold'>
                     <span className='text-red-1000'>Total</span> Words Generated with BasedGPT
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className='px-4 lg:px-16 2xl:px-32 py-40'>
+        <div className='max-w-screen-2xl'>
+          <h2 className='text-xl font-semibold text-gray-400'>Usecases</h2>
+          <div className='text-2xl lg:text-4xl 2xl:text-6xl font-sulphur font-semibold mt-10 text-white'>
+            Here are some potential use cases for BasedGPT on blockchain
+          </div>
+        </div>
+        <div className='grid grid-cols-12 gap-8 mt-10 '>
+          <div className='col-span-12 lg:col-span-5 '>
+            <div className="rounded-2xl p-5 lg:p-10 bg-red-1000 bg-[url('./assets/bg-b1.png')] bg-cover bg-center bg-no-repeat min-h-[450px] flex flex-col justify-between">
+              <div>
+                <h2 className='text-lg lg:text-xl font-semibold text-gray-200 uppercase font-sulphur'>
+                  Content Creation
+                </h2>
+                <p className='mt-4 text-white text-xl lg:text-3xl'>
+                  BasedGPT allows users to generate various types of content such as videos, music,
+                  art, and more, using AI-powered prompts.
+                </p>
+              </div>
+              <button className='px-8 py-3.5 rounded-full text-black bg-white w-fit font-semibold font-sulphur'>
+                View Usecase
+              </button>
+            </div>
+          </div>
+          <div className='col-span-12 lg:col-span-7 '>
+            <div className="rounded-2xl p-5 lg:p-10 bg-red-1000 bg-[url('./assets/bg-p1.png')] bg-cover bg-center bg-no-repeat min-h-[450px] flex flex-col justify-between">
+              <div>
+                <h2 className='text-lg lg:text-xl font-semibold text-gray-200 uppercase font-sulphur'>
+                  Reward System
+                </h2>
+                <p className='mt-4 text-white text-xl lg:text-3xl'>
+                  BasedGPT has a reward system for token holders who contribute to the platform.
+                  This incentivizes participation and can encourage users to create high-quality
+                  content to earn rewards
+                </p>
+              </div>
+              <button className='px-8 py-3.5 rounded-full text-black bg-white w-fit font-semibold font-sulphur'>
+                View Usecase
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className='grid grid-cols-12 gap-8 mt-10 '>
+          <div className='col-span-12 lg:col-span-7 '>
+            <div className="rounded-2xl p-5 lg:p-10 bg-red-1000 bg-[url('./assets/bg-p2.png')] bg-cover bg-center bg-no-repeat min-h-[450px] flex flex-col justify-between">
+              <div>
+                <h2 className='text-lg lg:text-xl font-semibold text-gray-200 uppercase font-sulphur'>
+                  Token Economy
+                </h2>
+                <p className='mt-4 text-white text-xl lg:text-3xl'>
+                  The BGPT token is used to purchase points on the platform, which can be used to
+                  generate AI prompts. The token economy can create a new market for content
+                  creation and provide a way for content creators to monetize their work.
+                </p>
+              </div>
+              <button className='px-8 py-3.5 rounded-full text-black bg-white w-fit font-semibold font-sulphur'>
+                View Usecase
+              </button>
+            </div>
+          </div>
+          <div className='col-span-12 lg:col-span-5 '>
+            <div className="rounded-2xl p-5 lg:p-10 bg-red-1000 bg-[url('./assets/bg-b2.png')] bg-cover bg-center bg-no-repeat min-h-[450px] flex flex-col justify-between">
+              <div>
+                <h2 className='text-lg lg:text-xl font-semibold text-gray-200 uppercase font-sulphur'>
+                  Security
+                </h2>
+                <p className='mt-4 text-white text-xl lg:text-3xl'>
+                  BasedGPT utilizes blockchain technology to ensure the security of the platform.
+                  This can be beneficial for content creators who want to protect their intellectual
+                  property.
+                </p>
+              </div>
+              <button className='px-8 py-3.5 rounded-full text-black bg-white w-fit font-semibold font-sulphur'>
+                View Usecase
+              </button>
             </div>
           </div>
         </div>
