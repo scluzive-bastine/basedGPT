@@ -10,7 +10,6 @@ import TextToVideo from './assets/video.json'
 import line from './assets/line.png'
 import circle from './assets/circle.png'
 import ec from './assets/ec.svg'
-import bgVideo from './assets/based.mp4'
 
 import cubes from './assets/spin.json'
 import cube2 from './assets/cube-2.json'
