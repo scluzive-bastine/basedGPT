@@ -67,6 +67,11 @@
       transition-duration: .6s;
   }
 
+  .token svg {
+    width: 100%;
+    height: 100%;
+  }
+
   .show {
     -webkit-transition-duration: .6s;
     -moz-transition-duration: .6s;
