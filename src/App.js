@@ -17,6 +17,7 @@ import { useEffect, useState } from 'react'
 
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import { Link } from 'react-scroll/modules'
 
 const applications = [
   {
@@ -153,22 +154,28 @@ function App() {
             <div className='text-white font-semibold'>BasedGPT</div>
             <div className='hidden md:flex space-x-4'>
               <div className='text-white hover:text-gray-200 cursor-pointer tracking-wide'>
-                Services
+                <Link smooth spy to="services">
+                Services</Link>
               </div>
               <div className='text-white hover:text-gray-200 cursor-pointer tracking-wide'>
-                Benefits
+                <Link smooth spy to="benefits">
+                Benefits</Link>
               </div>
               <div className='text-white hover:text-gray-200 cursor-pointer tracking-wide'>
-                About
+                <Link smooth spy to="applications">
+                Applications</Link>
               </div>
               <div className='text-white hover:text-gray-200 cursor-pointer tracking-wide'>
-                Tokenomics
+                <Link smooth spy to="tokenomics">
+                Tokenomics</Link>
               </div>
               <div className='text-white hover:text-gray-200 cursor-pointer tracking-wide'>
-                Roadmap
+                <Link smooth spy to="roadmap">
+                Roadmap</Link>
               </div>
               <div className='text-white hover:text-gray-200 cursor-pointer tracking-wide'>
-                Usecases
+                <Link smooth spy to="usecases">
+                Usecases</Link>
               </div>
             </div>
           </nav>
@@ -230,7 +237,7 @@ function App() {
           </div>
         </div>
       </div>
-      <section className='bg-white py-20 px-4 lg:px-20'>
+      <section className='bg-white py-20 px-4 lg:px-20' id='services'>
         <small
           className='uppercase text-gray-500 text-sm
         '
@@ -344,8 +351,8 @@ function App() {
           </div>
         </div>
       </section>
-      {/* Benefits */}
-      <section className='py-20 lg:py-40 px-4 lg:px-32 relative'>
+      {/* Benefits and Applications */}
+      <section className='py-20 lg:py-40 px-4 lg:px-32 relative' id='benefits'>
         <div className='relative'>
           <h2
             data-aos='fade-left'
@@ -439,7 +446,7 @@ function App() {
           /> */}
         </div>
         <img src={ec} className='absolute left-0 top-[55rem] hidden lg:flex' alt='eclipse' />
-        <div className='mt-20 lg:mt-40'>
+        <div className='mt-20 lg:mt-40' id='applications'>
           <h2
             data-aos='fade-right'
             data-aos-once='false'
@@ -484,7 +491,7 @@ function App() {
         </div>
       </section>
       {/* Roadmap */}
-      <section className='py-12 lg:py-40 bg-white 2xl:px-4'>
+      <section className='py-12 lg:py-40 bg-white 2xl:px-4' id='roadmap'>
         <div className='px-4 lg:px-32'>
           <small
             className='uppercase text-gray-500 text-sm
@@ -604,7 +611,7 @@ function App() {
       </section>
 
       {/* Tokenomics */}
-      <section className='px-4 lg:px-16 2xl:px-32 py-40'>
+      <section className='px-4 lg:px-16 2xl:px-32 py-40' id='tokenomics'>
         <div className='max-w-screen-2xl'>
           <h2 className='text-sm lg:text-xl font-semibold text-gray-400 uppercase font-sulphur'>
             Token Distribution
@@ -670,7 +677,7 @@ function App() {
         </div>
       </section>
       {/* Usecases */}
-      <section className='px-4 lg:px-16 2xl:px-32 pb-40'>
+      <section className='px-4 lg:px-16 2xl:px-32 pb-40' id='usecases'>
         <div className='max-w-screen-2xl'>
           <h2 className='text-xl font-semibold text-gray-400 uppercase font-sulphur'>Usecases</h2>
           <div className='text-4xl lg:text-6xl 2xl:text-6xl font-sulphur font-semibold mt-3 lg:mt-10 text-white'>
@@ -795,6 +802,26 @@ function App() {
                 View Usecase
               </button>
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-10 bg-black px-4">
+        <div className="flex flex-col md:flex-row space-y-3 md:space-y-0 justify-between max-w-screen-2xl mx-auto">
+          <div className='text-gray-300 text-sm'>
+            Copyright © 2022. All Rights Reserved BasedGPT
+          </div>
+          <div>
+            <div className='flex space-x-4 mb-4'>
+                <div className='border border-white rounded-full w-12 h-12 flex items-center justify-center'>
+                  <BsTwitter className='text-white text-xl' />
+                </div>
+                <div className='border border-white rounded-full w-12 h-12 flex items-center justify-center'>
+                  <BsFacebook className='text-white text-xl' />
+                </div>
+                <div className='border border-white rounded-full w-12 h-12 flex items-center justify-center'>
+                  <BsInstagram className='text-white text-xl' />
+                </div>
+              </div>
           </div>
         </div>
       </section>
