@@ -6,6 +6,7 @@ import circle from './assets/circle.png'
 import ec from './assets/ec.svg'
 import logo from './assets/logo-text.png'
 import partners from './assets/partners-bg.png'
+import coin from './assets/EcoGPT_Token.gif'
 
 import cubes from './assets/spin.json'
 import cube2 from './assets/cube-2.json'
@@ -125,7 +126,7 @@ function App() {
   }, [])
 
   return (
-    <div className='App'>
+    <div className='App overflow-hidden'>
       <section className='h-[400px] lg:min-h-[652px] bg-gradient-to-b from-[#641F27] to-[#121212] relative overflow-hidden'>
         <div className=''>
           <div className='absolute -left-40 2xl:-left-20 md:-top-32 2xl:-top-40'>
@@ -243,6 +244,26 @@ function App() {
         </div>
       </div>
       <section className='bg-white py-20 px-4 lg:px-20' id='services'>
+        <div className="max-w-screen-2xl mx-auto pb-20 md:pb-40">
+          <div className="grid grid-cols-12 gap-8 items-center">
+            <div className="col-span-12 md:col-span-5">
+              <img src={ coin} alt="coin" />
+            </div>
+            <div className="col-span-12 md:col-span-7"
+            data-aos='fade-left'
+            data-aos-once='false'
+            data-aos-offset='200'
+            data-aos-duration='1000'>
+              <div className='mt-40 px-4 lg:px-16 2xl:px-32 max-w-screen-3xl'>
+                <h2 className='text-xl font-semibold text-gray-700'>EcoGPT Yield</h2>
+                <div className='text-2xl lg:text-4xl 2xl:text-6xl font-sulphur font-semibold mt-5'>
+                 Providing real world yield with EcoGPT
+                  Every seconds to EGPT LP providers
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
         <small
           className='uppercase text-gray-500 text-sm
         '
@@ -564,7 +585,7 @@ function App() {
           <div className='pt-40 grid grid-cols-12 gap-8'>
             <div className='col-span-12 lg:col-span-5'>
               <div className='flex flex-col justify-between rounded-2xl h-[400px] lg:h-[800px] bg-black p-5 lg:p-10 2xl:p-20'>
-                <div className='text-xl lg:text-6xl font-sulphur font-extrabold text-white'>
+                <div className='text-2xl lg:text-6xl font-sulphur font-extrabold text-white'>
                   <span className='text-red-1000'>STATISTICS</span> OF EcoGPT IN BUSINESS
                 </div>
                 <img
@@ -578,7 +599,7 @@ function App() {
               </div>
             </div>
             <div className='col-span-12 lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-8'>
-              <div className='flex flex-col justify-between p-5 lg:p-10 rounded-2xl bg-gradient-to-b from-red-1000 to-black min-h-[250px]'>
+              <div className='flex flex-col justify-between p-5 lg:p-10 rounded-2xl bg-gradient-to-b from-red-1000 to-black md:min-h-[250px]'>
                 <div className='text-xl lg:text-6xl font-sulphur font-extrabold text-white'>
                   891,456,783
                 </div>
@@ -593,17 +614,17 @@ function App() {
                 </div>
               </div>
               <div className='grid grid-rows-2 gap-8'>
-                <div className='bg-red-1000 p-5 lg:p-10 rounded-2xl flex flex-col justify-between min-h-[250px]'>
-                  <div className='text-xl lg:text-6xl font-sulphur font-extrabold text-white'>
+                <div className='bg-red-1000 p-5 lg:p-10 rounded-2xl flex flex-col justify-between md:min-h-[250px]'>
+                  <div className='text-4xl lg:text-6xl font-sulphur font-extrabold text-white'>
                     90,178
                   </div>
                   <div className='text-xl lg:text-4xl font-sulphur font-extrabold text-white'>
                     Total Points Consumed with EcoGPT
                   </div>
                 </div>
-                <div className='bg-white border-2 border-red-1000 p-5 lg:p-10 rounded-2xl flex flex-col justify-between min-h-[250px]'>
-                  <div className='text-xl lg:text-6xl font-sulphur font-extrabold text-black'>
-                    90,178
+                <div className='bg-white border-2 border-red-1000 p-5 lg:p-10 rounded-2xl flex flex-col justify-between md:min-h-[250px]'>
+                  <div className='text-4xl lg:text-6xl font-sulphur font-extrabold text-black'>
+                    10,278
                   </div>
                   <div className='text-xl lg:text-4xl font-sulphur font-extrabold'>
                     <span className='text-red-1000'>Total</span> Words Generated with EcoGPT
