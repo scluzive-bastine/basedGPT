@@ -211,8 +211,8 @@ function App() {
             </p>
           </div>
           <div className='col-span-12 md:col-span-2'>
-            <button className='outline-none px-6 py-2.5 rounded-full w-full border border-white text-white text-lg hover:bg-white hover:text-black transition ease-linear duration-200'>
-              Start Now
+            <button className='outline-none px-6 py-2.5 font-semibold rounded-full w-full border border-white text-white text-lg hover:bg-white hover:text-black transition ease-linear duration-200'>
+              New Chat
             </button>
           </div>
         </div>
@@ -267,6 +267,9 @@ function App() {
                 <div className='text-2xl lg:text-4xl 2xl:text-6xl font-sulphur font-semibold mt-5'>
                   Providing real world yield with EcoGPT Every seconds to EGPT LP providers
                 </div>
+                <button className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-black text-black text-lg hover:bg-black hover:text-white transition ease-linear duration-200'>
+                  Buy EGPT Token
+                </button>
               </div>
             </div>
           </div>
@@ -585,6 +588,10 @@ function App() {
             far-reaching effects that are transforming the ways we live, work, and communicate with
             each other.
           </div>
+
+          <button className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-black text-black text-lg hover:bg-black hover:text-white transition ease-linear duration-200'>
+            Buy EGPT Token
+          </button>
         </div>
 
         <div className='px-4 2xl:px-20'>
@@ -682,30 +689,30 @@ function App() {
             <div className='mt-4 grid grid-cols-2 md:grid-cols-3 gap-4'>
               <div className='border border-gray-500 p-4 rounded-lg'>
                 <h4 className='uppercase text-gray-400 text-sm'>Presale</h4>
-                <h2 className='uppercase text-2xl font-semibold font-sulphur text-white'>50%</h2>
+                <h2 className='uppercase text-2xl font-semibold font-sulphur text-white'>40%</h2>
               </div>
               <div className='border border-teal-500 p-4 rounded-lg'>
                 <h4 className='uppercase text-gray-400 text-sm'>Liquidity</h4>
-                <h2 className='uppercase text-2xl font-semibold font-sulphur text-teal-500'>50%</h2>
+                <h2 className='uppercase text-2xl font-semibold font-sulphur text-teal-500'>24%</h2>
               </div>
               <div className='border border-blue-500 p-4 rounded-lg'>
-                <h4 className='uppercase text-gray-400 text-sm'>Marketing</h4>
-                <h2 className='uppercase text-2xl font-semibold font-sulphur text-blue-500'>50%</h2>
+                <h4 className='uppercase text-gray-400 text-sm'>LP Farm</h4>
+                <h2 className='uppercase text-2xl font-semibold font-sulphur text-blue-500'>10%</h2>
               </div>
               <div className='border border-red-500 p-4 rounded-lg'>
-                <h4 className='uppercase text-gray-400 text-sm'>Staking</h4>
-                <h2 className='uppercase text-2xl font-semibold font-sulphur text-red-500'>50%</h2>
+                <h4 className='uppercase text-gray-400 text-sm'>EGPT Staking</h4>
+                <h2 className='uppercase text-2xl font-semibold font-sulphur text-red-500'>10%</h2>
               </div>
               <div className='border border-purple-500 p-4 rounded-lg'>
-                <h4 className='uppercase text-gray-400 text-sm'>Development</h4>
+                <h4 className='uppercase text-gray-400 text-sm'>Marketing/CEX</h4>
                 <h2 className='uppercase text-2xl font-semibold font-sulphur text-purple-500'>
-                  50%
+                  10%
                 </h2>
               </div>
               <div className='border border-yellow-500 p-4 rounded-lg'>
-                <h4 className='uppercase text-gray-400 text-sm'>Team</h4>
+                <h4 className='uppercase text-gray-400 text-sm'>Future Development</h4>
                 <h2 className='uppercase text-2xl font-semibold font-sulphur text-yellow-500'>
-                  50%
+                  4%
                 </h2>
               </div>
             </div>
