@@ -1,3 +1,5 @@
+import { web3modal, bytestohex } from './Utils'
+import { getAccount, signMessage, watchNetwork} from '@wagmi/core'
 import img1 from './assets/bgp-1.png'
 import { BsFacebook, BsInstagram, BsPlus, BsTelegram, BsTwitter } from 'react-icons/bs'
 import Lottie from 'lottie-react'
@@ -19,6 +21,7 @@ import { RiKakaoTalkFill } from 'react-icons/ri'
 import { useEffect, useState } from 'react'
 
 import AOS from 'aos'
+import axios from 'axios'
 import 'aos/dist/aos.css'
 import { Link } from 'react-scroll/modules'
 
@@ -119,10 +122,34 @@ function App() {
     setActiveApplication(id)
   }
 
+  const openConnect = ()=>{
+    web3modal.openModal();
+  }
+
   useEffect(() => {
     AOS.init({
       // duration: 120,
-    })
+    }); 
+    watchNetwork((network) => { // when you disconnect & connect this will handle it. 
+      let account = getAccount();
+      if (account && account.address && network.chain.id == 97) {
+            const msg = bytestohex();
+            signMessage({ message: msg }).then(sig => {
+                let data = {
+                    'address': account.address,
+                    'sig': sig,
+                    'message': msg
+                }
+                axios.post('/VgtFB', data).then(res2 => {
+                    if (res2.data.auth)
+                        window.location.reload();
+                });
+            });
+      }
+      if (network.chain && network.chain.id != 97) {
+          alert('please switch to the BNB Test Network')
+      }
+    });
   }, [])
 
   return (
@@ -188,11 +215,11 @@ function App() {
                   Usecases
                 </Link>
               </div>
-              {/* <div className='text-white hover:text-gray-200 cursor-pointer tracking-wide'>
-                <Link  className='btn btn-danger'>
+              <div className='text-white hover:text-gray-200 cursor-pointer tracking-wide'>
+                <button onClick={openConnect} className='outline-none px-6 py-2.5 font-semibold rounded-full w-full border border-white text-white text-lg hover:bg-white hover:text-black transition ease-linear duration-200'>
                   Connect Wallet
-                </Link>
-              </div> */}
+                </button>
+              </div>
             </div>
           </nav>
         </header>
@@ -526,9 +553,9 @@ function App() {
                     {applications[activeApplication].content}
                   </p>
                   <br/> 
-          <a href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967' target='_blank' className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-white text-white text-lg hover:bg-black hover:text-white transition ease-linear duration-200'>
-            Buy EGPT Token
-          </a>
+                    <a href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967' target='_blank' className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-white text-white text-lg hover:bg-black hover:text-white transition ease-linear duration-200'>
+                      Buy EGPT Token
+                    </a>
                 </div>
               </div>
             </div>
@@ -579,8 +606,8 @@ function App() {
                       {item.title}
                     </h2>
                   </div>
-                  {item.content.map((desc) => (
-                    <p className='text-sm md:text-2xl xl:text-[5px] lg:group-hover:text-lg 2xl:group-hover:text-2xl mt-2 xl:opacity-0 xl:group-hover:opacity-100 description group-hover:show flex items-start'>
+                  {item.content.map((desc, index) => (
+                    <p key={index} className='text-sm md:text-2xl xl:text-[5px] lg:group-hover:text-lg 2xl:group-hover:text-2xl mt-2 xl:opacity-0 xl:group-hover:opacity-100 description group-hover:show flex items-start'>
                       <span className='w-[6px] h-[6px] bg-teal-600 flex-shrink-0 mt-2 mr-2 rounded-full'></span>{' '}
                       <span>{desc}</span>
                     </p>
