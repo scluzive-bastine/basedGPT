@@ -188,6 +188,11 @@ function App() {
                   Usecases
                 </Link>
               </div>
+              {/* <div className='text-white hover:text-gray-200 cursor-pointer tracking-wide'>
+                <Link  className='btn btn-danger'>
+                  Connect Wallet
+                </Link>
+              </div> */}
             </div>
           </nav>
         </header>
@@ -210,10 +215,10 @@ function App() {
               Every AI-generated content is an automatic income in your pocket.
             </p>
           </div>
-          <div className='col-span-12 md:col-span-2'>
-            <button className='outline-none px-6 py-2.5 font-semibold rounded-full w-full border border-white text-white text-lg hover:bg-white hover:text-black transition ease-linear duration-200'>
-              New Chat
-            </button>
+          <div className='col-span-12 md:col-span-3'>
+            <a href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967' target='_blank' className='outline-none px-6 py-2.5 font-semibold rounded-full w-full border border-white text-white text-lg hover:bg-white hover:text-black transition ease-linear duration-200'>
+              Buy EGPT Token
+            </a>
           </div>
         </div>
         <div className='mt-40'>
@@ -267,9 +272,10 @@ function App() {
                 <div className='text-2xl lg:text-4xl 2xl:text-6xl font-sulphur font-semibold mt-5'>
                   Providing real world yield with EcoGPT Every seconds to EGPT LP providers
                 </div>
-                <button className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-black text-black text-lg hover:bg-black hover:text-white transition ease-linear duration-200'>
-                  Buy EGPT Token
-                </button>
+                <br/>
+                <a href='https://makx.io/staking/56/0x5d579B3826680a422CA7e35488Aa70E4269575C0' target='_blank' className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-black text-black text-lg hover:bg-black hover:text-white transition ease-linear duration-200'>
+                  Stake EGPT Token
+                </a>
               </div>
             </div>
           </div>
@@ -519,6 +525,10 @@ function App() {
                   <p className='mt-5 text-2xl text-gray-300'>
                     {applications[activeApplication].content}
                   </p>
+                  <br/> 
+          <a href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967' target='_blank' className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-white text-white text-lg hover:bg-black hover:text-white transition ease-linear duration-200'>
+            Buy EGPT Token
+          </a>
                 </div>
               </div>
             </div>
@@ -588,10 +598,10 @@ function App() {
             far-reaching effects that are transforming the ways we live, work, and communicate with
             each other.
           </div>
-
-          <button className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-black text-black text-lg hover:bg-black hover:text-white transition ease-linear duration-200'>
+           <br/> 
+          <a href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967' target='_blank' className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-black text-black text-lg hover:bg-black hover:text-white transition ease-linear duration-200'>
             Buy EGPT Token
-          </button>
+          </a>
         </div>
 
         <div className='px-4 2xl:px-20'>
@@ -725,6 +735,10 @@ function App() {
             />
           </div>
         </div>
+        
+        <a href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967' target='_blank' className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-white text-white text-lg hover:bg-black hover:text-white transition ease-linear duration-200'>
+          Buy EGPT Token
+        </a>
       </section>
       {/* Usecases */}
       <section className='px-4 lg:px-16 2xl:px-32 pb-40' id='usecases'>
