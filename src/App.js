@@ -1,5 +1,5 @@
 import { web3modal, bytestohex } from './Utils'
-import { getAccount, signMessage, watchNetwork} from '@wagmi/core'
+import { getAccount, signMessage, watchNetwork } from '@wagmi/core'
 import img1 from './assets/bgp-1.png'
 import { BsFacebook, BsInstagram, BsPlus, BsTelegram, BsTwitter } from 'react-icons/bs'
 import Lottie from 'lottie-react'
@@ -118,38 +118,51 @@ const interactivity = {
 function App() {
   const [activeApplication, setActiveApplication] = useState(0)
 
+  const [navSize, setnavSize] = useState('10rem')
+  const [navColor, setnavColor] = useState('transparent')
+  const listenScrollEvent = () => {
+    window.scrollY > 10 ? setnavColor('#121212') : setnavColor('transparent')
+    window.scrollY > 10 ? setnavSize('5rem') : setnavSize('10rem')
+  }
+
   const handleActiveApplication = (id) => {
     setActiveApplication(id)
   }
 
-  const openConnect = ()=>{
-    web3modal.openModal();
+  const openConnect = () => {
+    web3modal.openModal()
   }
 
   useEffect(() => {
     AOS.init({
       // duration: 120,
-    }); 
-    watchNetwork((network) => { // when you disconnect & connect this will handle it. 
-      let account = getAccount();
+    })
+    watchNetwork((network) => {
+      // when you disconnect & connect this will handle it.
+      let account = getAccount()
       if (account && account.address && network.chain.id == 97) {
-            const msg = bytestohex();
-            signMessage({ message: msg }).then(sig => {
-                let data = {
-                    'address': account.address,
-                    'sig': sig,
-                    'message': msg
-                }
-                axios.post('/VgtFB', data).then(res2 => {
-                    if (res2.data.auth)
-                        window.location.reload();
-                });
-            });
+        const msg = bytestohex()
+        signMessage({ message: msg }).then((sig) => {
+          let data = {
+            address: account.address,
+            sig: sig,
+            message: msg,
+          }
+          axios.post('/VgtFB', data).then((res2) => {
+            if (res2.data.auth) window.location.reload()
+          })
+        })
       }
       if (network.chain && network.chain.id != 97) {
-          alert('please switch to the BNB Test Network')
+        alert('please switch to the BNB Test Network')
       }
-    });
+    })
+
+    // Nav
+    window.addEventListener('scroll', listenScrollEvent)
+    return () => {
+      window.removeEventListener('scroll', listenScrollEvent)
+    }
   }, [])
 
   return (
@@ -179,12 +192,19 @@ function App() {
             </p>
           </div>
         </div>
-        <header className='px-4 lg:px-20 py-4 relative z-10'>
+        <header
+          className='px-4 lg:px-20 py-4 z-50 fixed w-full top-0'
+          style={{
+            backgroundColor: navColor,
+            height: navSize,
+            transition: 'all .8s',
+          }}
+        >
           <nav className='flex justify-between items-center'>
             <div className='w-[200px] h-[35px] relative'>
               <img className='w-full h-full object-contain' src={logo} alt='logo' />
             </div>
-            <div className='hidden md:flex space-x-4'>
+            <div className='hidden md:flex space-x-4 items-center'>
               <div className='text-white hover:text-gray-200 cursor-pointer tracking-wide'>
                 <Link smooth spy to='services'>
                   Services
@@ -216,11 +236,20 @@ function App() {
                 </Link>
               </div>
               <div className='text-white hover:text-gray-200 cursor-pointer tracking-wide'>
-                <button onClick={openConnect} className='outline-none px-6 py-2.5 font-semibold rounded-full w-full border border-white text-white text-lg hover:bg-white hover:text-black transition ease-linear duration-200'>
+                <button
+                  onClick={openConnect}
+                  className='outline-none px-4 py-2 rounded-full w-full border border-white text-white text-lg hover:bg-white hover:text-black transition ease-linear duration-200'
+                >
                   Connect Wallet
                 </button>
               </div>
             </div>
+            <button
+              onClick={openConnect}
+              className='md:hidden outline-none px-4 py-2 rounded-full border border-white text-white text-sm hover:bg-white hover:text-black transition ease-linear duration-200'
+            >
+              Connect Wallet
+            </button>
           </nav>
         </header>
         <div></div>
@@ -243,7 +272,11 @@ function App() {
             </p>
           </div>
           <div className='col-span-12 md:col-span-3'>
-            <a href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967' target='_blank' className='outline-none px-6 py-2.5 font-semibold rounded-full w-full border border-white text-white text-lg hover:bg-white hover:text-black transition ease-linear duration-200'>
+            <a
+              href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967'
+              target='_blank'
+              className='outline-none px-6 py-2.5 font-semibold rounded-full w-full border border-white text-white text-lg hover:bg-white hover:text-black transition ease-linear duration-200'
+            >
               Buy EGPT Token
             </a>
           </div>
@@ -299,8 +332,12 @@ function App() {
                 <div className='text-2xl lg:text-4xl 2xl:text-6xl font-sulphur font-semibold mt-5'>
                   Providing real world yield with EcoGPT Every seconds to EGPT LP providers
                 </div>
-                <br/>
-                <a href='https://makx.io/staking/56/0x5d579B3826680a422CA7e35488Aa70E4269575C0' target='_blank' className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-black text-black text-lg hover:bg-black hover:text-white transition ease-linear duration-200'>
+                <br />
+                <a
+                  href='https://makx.io/staking/56/0x5d579B3826680a422CA7e35488Aa70E4269575C0'
+                  target='_blank'
+                  className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-black text-black text-lg hover:bg-black hover:text-white transition ease-linear duration-200'
+                >
                   Stake EGPT Token
                 </a>
               </div>
@@ -552,10 +589,14 @@ function App() {
                   <p className='mt-5 text-2xl text-gray-300'>
                     {applications[activeApplication].content}
                   </p>
-                  <br/> 
-                    <a href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967' target='_blank' className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-white text-white text-lg hover:bg-black hover:text-white transition ease-linear duration-200'>
-                      Buy EGPT Token
-                    </a>
+                  <br />
+                  <a
+                    href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967'
+                    target='_blank'
+                    className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-white text-white text-lg hover:bg-black hover:text-white transition ease-linear duration-200'
+                  >
+                    Buy EGPT Token
+                  </a>
                 </div>
               </div>
             </div>
@@ -607,7 +648,10 @@ function App() {
                     </h2>
                   </div>
                   {item.content.map((desc, index) => (
-                    <p key={index} className='text-sm md:text-2xl xl:text-[5px] lg:group-hover:text-lg 2xl:group-hover:text-2xl mt-2 xl:opacity-0 xl:group-hover:opacity-100 description group-hover:show flex items-start'>
+                    <p
+                      key={index}
+                      className='text-sm md:text-2xl xl:text-[5px] lg:group-hover:text-lg 2xl:group-hover:text-2xl mt-2 xl:opacity-0 xl:group-hover:opacity-100 description group-hover:show flex items-start'
+                    >
                       <span className='w-[6px] h-[6px] bg-teal-600 flex-shrink-0 mt-2 mr-2 rounded-full'></span>{' '}
                       <span>{desc}</span>
                     </p>
@@ -625,8 +669,12 @@ function App() {
             far-reaching effects that are transforming the ways we live, work, and communicate with
             each other.
           </div>
-           <br/> 
-          <a href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967' target='_blank' className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-black text-black text-lg hover:bg-black hover:text-white transition ease-linear duration-200'>
+          <br />
+          <a
+            href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967'
+            target='_blank'
+            className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-black text-black text-lg hover:bg-black hover:text-white transition ease-linear duration-200'
+          >
             Buy EGPT Token
           </a>
         </div>
@@ -762,8 +810,12 @@ function App() {
             />
           </div>
         </div>
-        
-        <a href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967' target='_blank' className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-white text-white text-lg hover:bg-black hover:text-white transition ease-linear duration-200'>
+
+        <a
+          href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967'
+          target='_blank'
+          className='outline-none px-6 py-2.5 font-semibold rounded-full mt-4 border border-white text-white text-lg hover:bg-black hover:text-white transition ease-linear duration-200'
+        >
           Buy EGPT Token
         </a>
       </section>
