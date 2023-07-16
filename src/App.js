@@ -275,7 +275,7 @@ function App() {
             <a
               href='https://makx.io/launchpads/56/0x77fa7830977f85840125cae4a6a4538096d09967'
               target='_blank'
-              className='outline-none px-6 py-2.5 font-semibold rounded-full w-full border border-white text-white text-lg hover:bg-white hover:text-black transition ease-linear duration-200'
+              className='outline-none px-6 py-2.5 rounded-full w-full border border-white text-white text-lg hover:bg-white hover:text-black transition ease-linear duration-200'
             >
               Buy EGPT Token
             </a>
